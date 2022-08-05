@@ -5,10 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dados com JS</title>
+    <style>
+        button {
+            font-weight: normal;
+            font-size: 12pt;
+            padding: 30px;
+        }
+    </style>
 </head>
 <body>
     <h1>Trabalhando com Dados v2.0</h1>
-    <button onclick="inicio()">CLique para começar</button>
+    <button onclick="inicio()">Clique para começar</button>
     <section id="resultado">
         <p>Aqui vai aparecer o resultado...</p>
     </section>
@@ -16,7 +23,7 @@
         function inicio(params) {
             let nome = window.prompt('Qual é o seu nome?')
             let res = window.document.getElementById('resultado')
-            res.innerHTML = `<p>Olá, <strong>${nome}</strong>! É um grande prazer te conhecer! &#x1f596;`
+            res.innerHTML += `<p>Olá, <strong>${nome}</strong>! É um grande prazer te conhecer! &#x1f596;`
         }
     </script>
 </body>
