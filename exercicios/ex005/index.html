@@ -11,16 +11,30 @@
             color: white;
             font: normal 18pt Arial;
         }
+        button {
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
     <h1>Iniciando os estudos com o DOM</h1>
     <p>Aqui vai o resultado</p>
     <p>Aprendendo usar <strong>DOM</strong> em <strong>JavaScript</strong>.</p>
-    <button>Clique em mim</button>
+    <button id="msg">Clique em mim</button>
     <script>
-        var p1 = document.getElementsByTagName('p')[0]
-        window.document.write()
+        var corpo = window.document.body
+        var p1 = document.getElementsByTagName('p')[1]
+        
+        /*
+        var d = document.getElementById('msg')
+        d.style.background = 'green'
+        d.style.color = 'white'
+        d.innerText = 'Estou aguardando...'
+        */
+       
+        var d = window.document.querySelector('#msg')
+        d.style.background = 'blue'
+        
     </script>
 </body>
 </html>
