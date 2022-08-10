@@ -9,19 +9,37 @@
         #area {
             background: rgb(50, 160, 65);
             color: white;
+            font-size: 20px;
             width: 200px;
             line-height: 200px;
             text-align: center;
         } 
-        #area:hover {
-            background-color: deepskyblue;
-            transition-duration: 0.5s;
-        }
     </style>
 </head>
 <body>
     <button id="area">
-        interaja...
+        Interaja...
     </button>
+
+    <script>
+        var a = window.document.getElementById('area')
+        a.addEventListener('click',clica)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clica() {
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+
+        function entrar() {
+            a.innerText = 'Entrou!'
+        }
+
+        function sair() {
+            a.innerText = 'Saiu!'
+            a.style.background = 'green'
+        }
+    </script>
 </body>
 </html>
