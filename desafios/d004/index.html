@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo do Troco</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+        }
+
+        button {
+            padding: 25px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando o Troco</h1>
+    <button onclick="res()">Comprar produto</button>
+    <script>
+        function res(params) {
+            let produto = window.prompt('Que produto você comprando?')
+            let preco = window.prompt(`Quanto custa ${produto} que você está comprando?`)
+            let n1 = Number(preco)
+            let valor = window.prompt(`Qual foi valor que você deu para pagar ${produto}?`)
+            let n2 = Number(valor)
+            let troco = n2 - n1
+
+            window.alert(`
+            Você comprou ${produto} que custou R$ ${preco}.
+            Deu R$ ${valor} em dinheiro e vai receber R$ ${troco} de troco.
+            Volte sempre!`)
+        }
+    </script>
+</body>
+</html>

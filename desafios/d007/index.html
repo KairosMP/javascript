@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor monetário</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 25px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor R$ ➝ US$</h1>
+    <button onclick="res()">Converter</button>
+    <p>Clique no botão acima para iniciar.</p>
+    <h1 id="enuciado"></h1>
+    <section id="valor"></section>
+    <script>
+        var cotacao = Number(window.prompt('Digete quanto está a cotação do dólar:'))
+        function res() {
+            let reais = Number(window.prompt('Digite quantos reais tem na carteira:'))
+            let titulo = document.querySelector('h1#enuciado')
+            let valores = document.querySelector('section#valor')
+            titulo.innerHTML = `O valor em ${reais.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}, corresponde a...` 
+
+            let dolar = reais/cotacao
+
+            valores.innerHTML = 
+            `
+            <p>O valor em dólar é ${dolar.toLocaleString('en',{style: 'currency', currency: 'USD'})}</p>
+            `
+        }
+    </script>
+</body>
+</html>
