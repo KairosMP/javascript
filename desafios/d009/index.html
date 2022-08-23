@@ -26,19 +26,19 @@
         function res() {
              let funcionario = window.prompt('Qual é o nome do funcionário?')
             let salario = Number(window.prompt(`Digete qual é o valor do salário do funcionário ${funcionario}:`))
-            let preço = Number(window.prompt(`Digite qual é o reajuste salarial do ${funcionario}`))
+            let reajuste = Number(window.prompt(`Digite qual é o reajuste salarial do ${funcionario}`))
             let titulo = document.querySelector('h1#enuciado')
             let valores = document.querySelector('section#valor')
-            titulo.innerHTML = `${funcionario.toUpperCase} desconto de ${Desconto}% para ${produto}` 
+            titulo.innerHTML = `${funcionario} recebeu um aumento salarial` 
 
-            let des = Desconto*(preço/100)
-            let vdes = preço-des
+            let ajuste = reajuste*(salario/100)
+            let SalarialAtual = salario+ajuste
 
             valores.innerHTML = 
             `
-            <p>O preço original era ${preço.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}.</p>
-            <p>Você acaba de ganhar R$ ${des.toLocaleString('pt-br',{style: 'currency',currency: 'BRL'})} de desconto (-${Desconto}%).</p>
-            <p>No fim, você vai pagar R$ ${vdes.toLocaleString('pt-br',{style: 'currency',currency: 'BRL'})} no produto ${produto}.</p>
+            <p>O salário atual era ${salario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}.</p>
+            <p>Com o aumento de ${reajuste}%, o salário vai aumentar R$ ${ajuste.toLocaleString('pt-br',{style: 'currency',currency: 'BRL'})} no próximo mês.</p>
+            <p>E a partir daí, ${funcionario} vai passar a ganhar ${SalarialAtual.toLocaleString('pt-br',{style: 'currency',currency: 'BRL'})}.</p>
             `
         }
     </script>
