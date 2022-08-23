@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste salarial</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            padding: 25px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <button onclick="res()">Reajuste de salário</button>
+    <p>Clique no botão acima para iniciar.</p>
+    <h1 id="enuciado"></h1>
+    <section id="valor"></section>
+    <script>
+        function res() {
+             let funcionario = window.prompt('Qual é o nome do funcionário?')
+            let salario = Number(window.prompt(`Digete qual é o valor do salário do funcionário ${funcionario}:`))
+            let preço = Number(window.prompt(`Digite qual é o reajuste salarial do ${funcionario}`))
+            let titulo = document.querySelector('h1#enuciado')
+            let valores = document.querySelector('section#valor')
+            titulo.innerHTML = `${funcionario.toUpperCase} desconto de ${Desconto}% para ${produto}` 
+
+            let des = Desconto*(preço/100)
+            let vdes = preço-des
+
+            valores.innerHTML = 
+            `
+            <p>O preço original era ${preço.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}.</p>
+            <p>Você acaba de ganhar R$ ${des.toLocaleString('pt-br',{style: 'currency',currency: 'BRL'})} de desconto (-${Desconto}%).</p>
+            <p>No fim, você vai pagar R$ ${vdes.toLocaleString('pt-br',{style: 'currency',currency: 'BRL'})} no produto ${produto}.</p>
+            `
+        }
+    </script>
+</body>
+</html>
