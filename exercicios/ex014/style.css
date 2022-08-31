@@ -16,7 +16,14 @@ section {
     padding: 15px;
     width: 500px;
     margin: auto;
+    text-align: center;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.200);
+}
+
+
+img#imagem {
+    width: 250px;
+    height: 250px;
 }
 
 footer {
