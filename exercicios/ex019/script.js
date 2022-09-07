@@ -1,11 +1,22 @@
 function start(params) {
-    let numero = window.document.querySelector('input#Number')
-    let n = Number(numero)
-    let res = window.document.querySelector('div#res')
-    for (let index = 1; index <= 10; index++) {
-        let multi = n * index
-        res.insertAdjacentHTML('beforeend',multi)
+    // Extraindo os valores da página:
+    let num = document.querySelector('input#txtn')
+    let tab = document.querySelector('select#seltab')
 
-        console.log(multi)
+    // Estabelecendo as variaveis:
+    if (num.value.lenght == 0) {
+        window.alert("Digite um numero")
+    } else {
+        let n = Number(num.value)
+
+    // Criando o mecanisnmo da tabuada:
+        tab.innerHTML = ''
+        for (let index = 1; index <= 10; index++) {
+            let item = document.createElement('option')
+            let multi = n * index 
+            item.text = `${n} x ${index} = ${multi}`
+            item.value = `tab${index }`
+            tab.appendChild(item)
+    }
     }
 }
